@@ -24,5 +24,9 @@ form.addEventListener("submit", function (event) {
   }
   // Se chegamos até aqui, os campos foram preenchidos corretamente
   alert("Login realizado com sucesso!");
+  var token = "xyz123";
+  // Armazenar o token de autenticação no localStorage
+  localStorage.setItem("authToken", token);
+  window.location.href = "criptografia.html";
 });
 

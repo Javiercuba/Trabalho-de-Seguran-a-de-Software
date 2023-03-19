@@ -1,0 +1,99 @@
+/* Fonte personalizada */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+/* Estilo global */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: #333;
+	background-color: #f2f2f2;
+}
+
+h1 {
+	margin-top: 50px;
+	text-align: center;
+	font-size: 36px;
+	font-weight: 700;
+}
+
+/* Estilo do contêiner */
+.conteudo {
+	margin: 50px auto;
+	max-width: 600px;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+	border-radius: 5px;
+}
+
+/* Estilo do rótulo */
+label {
+	display: block;
+	margin-bottom: 5px;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+/* Estilo da área de texto */
+textarea {
+	display: block;
+	width: 100%;
+	height: 150px;
+	margin-bottom: 20px;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	resize: vertical;
+}
+
+/* Estilo do resultado criptografado */
+#resultado {
+	background-color: #f2f2f2;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+textarea {
+ 
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#criptografar {
+  background-color: #4CAF50;
+}
+
+#descriptografar {
+  background-color: #f44336;
+}
