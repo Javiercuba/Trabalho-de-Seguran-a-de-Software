@@ -97,3 +97,39 @@ button {
 #descriptografar {
   background-color: #f44336;
 }
+
+label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  background-color: #f8f8f8;
+  appearance: none;
+}
+
+select:hover {
+  border-color: #aaa;
+}
+
+select:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+}
+
+select option {
+  font-size: 1.2rem;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+select option:hover {
+  background-color: #ddd;
+}
