@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tela de Login</title>
+        <title>Login</title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
@@ -15,12 +15,19 @@
                 <input type="password" id="password" name="password">
 
                 <label for="password">CPF:</label>
-                <input type="password" id="password"
+
+
+                <input type="password" id="cpf"
                     name="password"
                     inputmode="number"
                     minlength="11"
                     pattern="^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}">
-                <br><br>
+
+                <img
+                    src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png"
+                    id="pass" class="olho">
+
+
                 <input type="submit" value="Entrar">
                 <div class="error-message"></div>
 

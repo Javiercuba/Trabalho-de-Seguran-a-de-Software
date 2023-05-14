@@ -28,3 +28,19 @@ form.addEventListener("submit", function (event) {
   localStorage.setItem("authToken", token);
   window.location.href = "criptografia.html";
 });
+
+document.getElementById("pass").addEventListener("mousedown", function () {
+  document.getElementById("cpf").type = "text";
+  document.getElementById("password").type = "text";
+});
+
+document.getElementById("pass").addEventListener("mouseup", function () {
+  document.getElementById("cpf").type = "password";
+  document.getElementById("password").type = "password";
+});
+
+// Para que o password não fique exposto apos mover a imagem.
+document.getElementById("pass").addEventListener("mousemove", function () {
+  document.getElementById("cpf").type = "password";
+  document.getElementById("password").type = "password";
+});

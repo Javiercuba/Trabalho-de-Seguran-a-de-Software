@@ -3,7 +3,7 @@ const texto = document.getElementById("texto");
 const resultado = document.getElementById("resultado");
 const criptografarBotao = document.getElementById("criptografar");
 const descriptografarBotao = document.getElementById("descriptografar");
-
+const metodo = document.getElementById("opcaoMetodos");
 var token = localStorage.getItem("authToken");
 
 var headers = { Authorization: "Bearer " + token };
@@ -11,10 +11,15 @@ var headers = { Authorization: "Bearer " + token };
 if (token !== "xyz123") {
   window.location.href = "/index.html";
 }
-// Fazer uma solicitação ao servidor com o cabeçalho Authorization
+const metodoSelecionado = metodo.value;
+//pegar metodo selecionado
+function opcaoSelecionada() {
+  console.log(metodoSelecionado);
+}
 
-// Função para criptografar uma palavra
-function criptografarPalavra(palavra) {
+//Metodos de criptografia
+
+function Metodo1(palavra) {
   let criptografado = "";
   for (let i = 0; i < palavra.length; i++) {
     criptografado += String.fromCharCode(palavra.charCodeAt(i) + 1);
@@ -22,8 +27,30 @@ function criptografarPalavra(palavra) {
   return criptografado;
 }
 
+function CriptografaMetodo2(palavra) {
+  criptografado = palavra
+    .replace(/e/g, "enter")
+    .replace(/i/g, "imes")
+    .replace(/a/g, "ai")
+    .replace(/o/g, "ober")
+    .replace(/u/g, "ufat");
+
+  return criptografado;
+}
+
+function DescriptografarMetodo2(palavra) {
+  let descriptografado = palavra
+    .replace(/enter/g, "e")
+    .replace(/imes/g, "i")
+    .replace(/ai/g, "a")
+    .replace(/ober/g, "o")
+    .replace(/ufat/g, "u");
+
+  return descriptografado;
+}
+
 // Função para descriptografar uma palavra
-function descriptografarPalavra(palavra) {
+function DescriptografarMetodo1(palavra) {
   let descriptografado = "";
   for (let i = 0; i < palavra.length; i++) {
     descriptografado += String.fromCharCode(palavra.charCodeAt(i) - 1);
@@ -33,32 +60,53 @@ function descriptografarPalavra(palavra) {
 
 // Função para criptografar um texto
 function criptografarTexto(texto) {
+  const metodoSelecionado = metodo.value;
   let palavras = texto.split(" ");
   let criptografado = "";
   for (let i = 0; i < palavras.length; i++) {
-    criptografado += criptografarPalavra(palavras[i]) + " ";
+    switch (metodoSelecionado) {
+      case "Metodo1":
+        criptografado += Metodo1(palavras[i]) + " ";
+        break;
+      case "Metodo2":
+        criptografado += CriptografaMetodo2(palavras[i]) + " ";
+        break;
+      case "Metodo3":
+        criptografado += CriptografaMetodo2(palavras[i]) + " ";
+        break;
+
+      default:
+        console.log("Metodo Não encontrador");
+        break;
+    }
   }
+
   return criptografado;
 }
 
 // Função para descriptografar um texto
 function descriptografarTexto(texto) {
+  const metodoSelecionado = metodo.value;
   let palavras = texto.split(" ");
   let descriptografado = "";
   for (let i = 0; i < palavras.length; i++) {
-    descriptografado += descriptografarPalavra(palavras[i]) + " ";
+    switch (metodoSelecionado) {
+      case "Metodo1":
+        descriptografado += DescriptografarMetodo1(palavras[i]) + " ";
+        break;
+      case "Metodo2":
+        descriptografado += DescriptografarMetodo2(palavras[i]) + " ";
+        break;
+      case "Metodo3":
+        descriptografado += DescriptografarMetodo2(palavras[i]) + " ";
+        break;
+
+      default:
+        console.log("Metodo Não encontrador");
+        break;
+    }
   }
   return descriptografado;
-}
-
-// Função para criptografar um arquivo
-function criptografarArquivo(arquivo) {
-  // Implemente aqui a lógica para criptografar um arquivo
-}
-
-// Função para descriptografar um arquivo
-function descriptografarArquivo(arquivo) {
-  // Implemente aqui a lógica para descriptografar um arquivo
 }
 
 // Função para atualizar o resultado
@@ -70,6 +118,10 @@ function atualizarResultado() {
     resultado.value = descriptografarTexto(valor);
   }
 }
+//Evento para selecionar o metodo
+metodo.addEventListener("click", function () {
+  console.log(metodo.value);
+});
 
 // Adiciona evento para atualizar o resultado quando o texto é alterado
 texto.addEventListener("input", atualizarResultado);
@@ -85,7 +137,6 @@ descriptografarBotao.addEventListener("click", function () {
   atualizarResultado();
 });
 
-// Define o modo de criptografia inicial como criptografar
 let modoCriptografia = "criptografar";
 
 // Atualiza o resultado inicialmente
