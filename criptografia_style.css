@@ -14,13 +14,13 @@ body {
 	color: #333;
 	background-color: #f2f2f2;
 }
-
+/* 
 h1 {
 	margin-top: 50px;
 	text-align: center;
 	font-size: 36px;
 	font-weight: 700;
-}
+} */
 
 /* Estilo do contêiner */
 .conteudo {
@@ -38,6 +38,7 @@ label {
 	margin-bottom: 5px;
 	font-size: 18px;
 	font-weight: 700;
+  color: #000;
 }
 
 /* Estilo da área de texto */

@@ -26,6 +26,19 @@ function Metodo1(palavra) {
   }
   return criptografado;
 }
+function MetodoAES(mensagem) {
+  let mensagemCriptografada = "";
+  let chave = "oitudobombb?";
+  for (let i = 0; i < mensagem.length; i++) {
+    let char = mensagem.charCodeAt(i);
+    let chaveChar = chave.charCodeAt(i % chave.length);
+
+    let charCriptografado = char ^ chaveChar; // Operação XOR
+    mensagemCriptografada += String.fromCharCode(charCriptografado);
+  }
+
+  return mensagemCriptografada;
+}
 
 function CriptografaMetodo2(palavra) {
   criptografado = palavra
@@ -58,8 +71,22 @@ function DescriptografarMetodo1(palavra) {
   return descriptografado;
 }
 
+function DescriptografarMetodoAES(mensagemCriptografada) {
+  let mensagemDescriptografada = "";
+  let chave = "oitudobombb?";
+  for (let i = 0; i < mensagemCriptografada.length; i++) {
+    let charCriptografado = mensagemCriptografada.charCodeAt(i);
+    let chaveChar = chave.charCodeAt(i % chave.length);
+
+    let charDescriptografado = charCriptografado ^ chaveChar; // Operação XOR
+    mensagemDescriptografada += String.fromCharCode(charDescriptografado);
+  }
+
+  return mensagemDescriptografada;
+}
 // Função para criptografar um texto
 function criptografarTexto(texto) {
+  console.log("entrei");
   const metodoSelecionado = metodo.value;
   let palavras = texto.split(" ");
   let criptografado = "";
@@ -72,7 +99,7 @@ function criptografarTexto(texto) {
         criptografado += CriptografaMetodo2(palavras[i]) + " ";
         break;
       case "Metodo3":
-        criptografado += CriptografaMetodo2(palavras[i]) + " ";
+        criptografado += MetodoAES(palavras[i]) + " ";
         break;
 
       default:
@@ -98,7 +125,7 @@ function descriptografarTexto(texto) {
         descriptografado += DescriptografarMetodo2(palavras[i]) + " ";
         break;
       case "Metodo3":
-        descriptografado += DescriptografarMetodo2(palavras[i]) + " ";
+        descriptografado += DescriptografarMetodoAES(palavras[i]) + " ";
         break;
 
       default:

@@ -2,16 +2,31 @@
     <head>
         <title>Criptografia</title>
         <link rel="stylesheet" type="text/css" href="criptografia_style.css">
+        <link rel="stylesheet" type="text/css" href="sobre.css">
     </head>
     <body>
-        <h1>Sistema Teste</h1>
+        <header>
+            <section>
+                <h1>Crazy Friends<br> encrypted</h1>
+                <input class="menu-icon" type="checkbox" id="menu-icon"
+                    name="menu-icon" />
+                <label for="menu-icon"></label>
+                <nav class="nav">
+                    <ul class="pt-5">
+                        <li><a href="criptografia.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </header>
 
         <div class="conteudo">
             <label for="opcoes">Escolha uma metodo de criptografia:</label>
             <select id="opcaoMetodos" name="opcoes">
-                <option value="Metodo1">Metodo 1</option>
-                <option value="Metodo2">Metodo 2</option>
-                <option value="Metodo3">Metodo 3</option>
+                <option value="Metodo1">Metodo SSL</option>
+                <option value="Metodo2">Metodo TLS</option>
+                <option value="Metodo3">Metodo AES</option>
             </select>
 
             <label for="texto">Digite o texto:</label>
