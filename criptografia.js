@@ -17,8 +17,6 @@ function opcaoSelecionada() {
   console.log(metodoSelecionado);
 }
 
-//Metodos de criptografia
-
 function Metodo1(palavra) {
   let criptografado = "";
   for (let i = 0; i < palavra.length; i++) {
@@ -38,6 +36,28 @@ function MetodoAES(mensagem) {
   }
 
   return mensagemCriptografada;
+}
+
+function CriptografaMetodo2(palavra) {
+  criptografado = palavra
+    .replace(/e/g, "enter")
+    .replace(/i/g, "imes")
+    .replace(/a/g, "ai")
+    .replace(/o/g, "ober")
+    .replace(/u/g, "ufat");
+
+  return criptografado;
+}
+
+function DescriptografarMetodo2(palavra) {
+  let descriptografado = palavra
+    .replace(/enter/g, "e")
+    .replace(/imes/g, "i")
+    .replace(/ai/g, "a")
+    .replace(/ober/g, "o")
+    .replace(/ufat/g, "u");
+
+  return descriptografado;
 }
 
 function CriptografaMetodo2(palavra) {
@@ -86,7 +106,6 @@ function DescriptografarMetodoAES(mensagemCriptografada) {
 }
 // Função para criptografar um texto
 function criptografarTexto(texto) {
-  console.log("entrei");
   const metodoSelecionado = metodo.value;
   let palavras = texto.split(" ");
   let criptografado = "";
